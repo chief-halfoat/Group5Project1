@@ -6,21 +6,22 @@ public class Task06 {
 
 	public static void main(String[] args) {
 
-		Scanner ins = new Scanner(System.in);
-		int remainder;
-		boolean isPrime = true;
-		System.out.println("Please enter a number");
-		int numberToCheck = ins.nextInt();
-		for (int i = 2; i <= numberToCheck / 2; i++) {
-			remainder = numberToCheck % i;
-			if (remainder == 0) {
-				isPrime = false;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number from 1 to 10 000 000");
+		int a = sc.nextInt();
+		boolean prime = false;
+
+		for (int i = 2; i < a; i++) {
+			if (a % i == 0) {
+				prime = true;
 				break;
 			}
 		}
-		if (isPrime)
-			System.out.println(numberToCheck + " is a Prime number");
-		else
-			System.out.println(numberToCheck + " is not a Prime number");
+
+		if (!prime) {
+			System.out.println(a + " is a prime number");
+		} else {
+			System.out.println(a + " is NOT a prime number");
+		}
 	}
 }
